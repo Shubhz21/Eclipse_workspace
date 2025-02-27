@@ -1,0 +1,45 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>My Web Application</display-name>
+
+    <welcome-file-list>
+        <welcome-file>login.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>mypknew.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Dashbrdsrvlt</servlet-name>
+        <servlet-class>mypknew.Dashbrdsrvlt</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Dashbrdsrvlt</servlet-name>
+        <url-pattern>/Dashbrdsrvlt</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Logoutsrvlt</servlet-name>
+        <servlet-class>mypknew.Logoutsrvlt</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logoutsrvlt</servlet-name>
+        <url-pattern>/Logoutsrvlt</url-pattern>
+    </servlet-mapping>
+    
+    <error-page>
+    <exception-type>javax.servlet.ServletException</exception-type>
+    <location>/error.html</location>
+    </error-page>
+
+</web-app>
