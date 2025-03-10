@@ -33,7 +33,7 @@ public class JdbcConnboth2 {
         
 		ResultSet rs2, rs1;
         
-		String[] qrs= {"insert into customer (name,address) values ('abhijeet','Pune')","select * from customer",};
+		String[] qrs= {"insert into customer (name,address) values ('Kalyani','Pune')","select * from customer",};
 		
 		
 		for(String qr: qrs) {

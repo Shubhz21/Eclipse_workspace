@@ -7,11 +7,12 @@
 </head>
 <body>
 <div class="col-11 container">
- <div align="center">
-  <h1>New Student Registration</h1>
+ <div align="center"> 
+  <h1>New Registration</h1>
  
-  <form action="Studentsrvlt" method="service">
+  <form action="Loginandregsrvlt" method="service">
   <div class="container mt-4">
+  <input type="hidden" name="action" value="register">
    <table style="width: 95%" class="table">
     <tr>
      <td><legend>Name</legend></td>
@@ -33,9 +34,19 @@
      <td><legend>set new password</legend></td>
      <td><input type="password" name="password" required/></td>
     </tr>
+    <tr>
+    <td><legend>Role:</legend></td>
+   <td> <select name="role">
+   <option value="select">select</option>
+        <option value="STUDENT">Student</option>
+        <option value="ADMIN">Admin</option>
+    </select>
+    </td>
+    <br>
+    </tr>
    </table><br/>
    <input type="submit" class="btn btn-outline-success" value="Submit" />&nbsp; OR&nbsp;
-   <a type="button" class="btn btn-link" href="login.html">Go to login page </a>
+   <a type="button" class="btn btn-outline-secondary" href="main.html">Go to Home </a>
    </div>
   </form>
  </div>

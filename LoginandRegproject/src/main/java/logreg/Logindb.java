@@ -17,15 +17,13 @@ public class Logindb {
 
         Class.forName("oracle.jdbc.driver.OracleDriver");
 
-        try (Connection connection = DriverManager
-            .getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "admin");
+        try ( Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "admin");
         		
             
             PreparedStatement preparedStatement = connection
-            .prepareStatement("SELECT * FROM uregister WHERE username = ? AND password = ?")) {
+            .prepareStatement("SELECT * FROM uRegister1 WHERE username = ? AND password = ?")) {
             preparedStatement.setString(1, loginstd.getUsername());
             preparedStatement.setString(2, loginstd.getPassword());
-
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             
@@ -40,14 +38,23 @@ public class Logindb {
 
     private void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
+        	
             if (e instanceof SQLException) {
+            	
                 e.printStackTrace(System.err);
+                
                 System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+                
                 System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+                
                 System.err.println("Message: " + e.getMessage());
+                
                 Throwable t = ex.getCause();
+                
                 while (t != null) {
+                	
                     System.out.println("Cause: " + t);
+                    
                     t = t.getCause();
                 }
             }

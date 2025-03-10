@@ -11,7 +11,7 @@ public class Studentdb {
 
     public int registerStudent(Student student) throws ClassNotFoundException {
     	
-        String INSERT_USERS_SQL = "INSERT INTO uregister" +
+        String INSERT_USERS_SQL = "INSERT INTO uRegister1" +
                 "  (name, email, phone, username, password) VALUES " +
                 " (?, ?, ?, ?, ?)";
 

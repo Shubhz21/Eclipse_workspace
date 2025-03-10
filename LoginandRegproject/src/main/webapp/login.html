@@ -29,8 +29,9 @@
 
 <body>
     <div class="col-11 container">
-        <form action="Loginsrvlt" method="service">
+        <form action="Loginandregsrvlt" method="service">
             <div class="container mt-3">
+            <input type="hidden" name="action" value="login">
                 <h4>Use your username & password for login</h4>
                 <br />
                 <hr>
@@ -42,9 +43,11 @@
                 <div class="form-group col-md-5">
                     <label for="pd">Password<span class="required-field"></span></label>
                     <input type="password" class="form-control" name="password" id="pd" placeholder="Password" required>
+                <label for="pd">Role:<span class="required-field"></span></label>
+                <br/>
                 </div><br/>
-                <input type="submit" class="btn btn-outline-success" value="Login" id="sb">&nbsp; OR &nbsp;
-                <a type="button" class="btn btn-link" href="Registration.html">New User </a>
+                <input type="submit" class="btn btn-outline-success" value="Login" id="sb">&nbsp; 
+                <a type="button" href="main.html" class="btn btn-outline-primary">Home</a>
             </div>
         </form>
         <hr>

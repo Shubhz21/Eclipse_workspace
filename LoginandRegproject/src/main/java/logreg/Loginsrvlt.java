@@ -24,7 +24,7 @@ public class Loginsrvlt extends HttpServlet {
     	logindb = new Logindb();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void service(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
     	
     	

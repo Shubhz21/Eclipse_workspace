@@ -21,14 +21,31 @@
     </servlet-mapping>
     
     
+    
     <servlet>
         <servlet-name>Studentsrvlt</servlet-name>
         <servlet-class>logreg.Studentsrvlt</servlet-class>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>Studentsrvlt</servlet-name>
         <url-pattern>/Studentsrvlt</url-pattern>
     </servlet-mapping>
+    
+    
+    
+    <servlet>
+        <servlet-name>Loginandregsrvlt</servlet-name>
+        <servlet-class>logreg.Loginandregsrvlt</servlet-class>
+    </servlet>
+    
+    
+    <servlet-mapping>
+        <servlet-name>Loginandregsrvlt</servlet-name>
+        <url-pattern>/Loginandregsrvlt</url-pattern>
+    </servlet-mapping>
+    
+    
     
     
     

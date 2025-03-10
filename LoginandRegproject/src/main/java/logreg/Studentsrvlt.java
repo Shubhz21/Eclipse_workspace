@@ -16,8 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 public class Studentsrvlt extends HttpServlet {
 	
 	
-
-	
     private Studentdb studentdb;
 
     public void init() {
