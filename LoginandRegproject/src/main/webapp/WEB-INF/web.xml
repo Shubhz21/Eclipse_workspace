@@ -46,7 +46,10 @@
     </servlet-mapping>
     
     
-    
+    <error-page>
+    <exception-type>javax.servlet.ServletException</exception-type>
+    <location>/error.html</location>
+    </error-page>
     
     
   

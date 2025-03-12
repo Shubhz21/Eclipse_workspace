@@ -48,6 +48,7 @@ public class Adminandstudentmodel {
     }
 
     public String getPhone() {
+    	
         return phone;
     }
 
@@ -86,6 +87,7 @@ public class Adminandstudentmodel {
     }
 
     public String getRole() {
+    	
         return role;
     }
 
