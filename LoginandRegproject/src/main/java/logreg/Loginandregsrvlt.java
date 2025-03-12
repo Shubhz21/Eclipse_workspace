@@ -124,5 +124,32 @@ public class Loginandregsrvlt extends HttpServlet {
             e.printStackTrace();
         }
     }
+    
+    
+    private void editStudent(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String username = request.getParameter("username");
+
+        Adminandstudentmodel student = new Adminandstudentmodel();
+        student.setId(id);
+        student.setName(name);
+        student.setEmail(email);
+        student.setPhone(phone);
+        student.setUsername(username);
+
+        try {
+            loginandregdao.updateStudent(student);
+            response.sendRedirect("Loginandregsrvlt?action=login"); // Reload admin dashboard
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("error.html");
+        }
+    }
+    
 }
 
