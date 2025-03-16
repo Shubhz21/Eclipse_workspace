@@ -31,7 +31,9 @@ public class Employeesrvlt extends HttpServlet {
             RequestDispatcher dispatcher = req.getRequestDispatcher("emp.jsp");
             
             dispatcher.forward(req, res); 
+            
         } catch (Exception e) {
+        	
             e.printStackTrace();
             
             res.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error retrieving Employees.");
