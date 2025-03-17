@@ -92,10 +92,10 @@ public class Loginandregsrvlt extends HttpServlet {
             String role = loginandregdao.validateUser(username, password);
 
             if (role != null) {
-                HttpSession session = request.getSession(); // Create session
+                HttpSession session = request.getSession(); 
                 session.setAttribute("username", username);
                 session.setAttribute("role", role);
-                session.setMaxInactiveInterval(5 * 60); // Session expires in 30 minutes
+                session.setMaxInactiveInterval(5 * 60); 
 
                 if ("ADMIN".equals(role)) {
                     List<Adminandstudentmodel> students = loginandregdao.getAllStudents();
@@ -105,7 +105,7 @@ public class Loginandregsrvlt extends HttpServlet {
                     response.sendRedirect("welcome.html");
                 }
             } else {
-                response.sendRedirect("error.html"); // Redirect if login fails
+                response.sendRedirect("error.html"); 
             }
         } catch (Exception e) {
             e.printStackTrace();
