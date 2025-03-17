@@ -86,47 +86,36 @@ public class Loginandregsrvlt extends HttpServlet {
             throws ServletException, IOException {
 
         String username = request.getParameter("username");
-        
         String password = request.getParameter("password");
 
         try {
             String role = loginandregdao.validateUser(username, password);
 
             if (role != null) {
-            	
-                HttpSession session = request.getSession();
-                
+                HttpSession session = request.getSession(); // Create session
                 session.setAttribute("username", username);
-                
                 session.setAttribute("role", role);
+                session.setMaxInactiveInterval(5 * 60); // Session expires in 30 minutes
 
                 if ("ADMIN".equals(role)) {
-                	
-                	List<Adminandstudentmodel> students = loginandregdao.getAllStudents();
-                	
+                    List<Adminandstudentmodel> students = loginandregdao.getAllStudents();
                     request.setAttribute("students", students);
-                    
                     request.getRequestDispatcher("admin_dashboard.jsp").forward(request, response);
-                   
-                } else if("STUDENT".equals(role)) {
-                	
+                } else if ("STUDENT".equals(role)) {
                     response.sendRedirect("welcome.html");
                 }
-                
             } else {
-            	
-                response.sendRedirect("error.html");
-                
+                response.sendRedirect("error.html"); // Redirect if login fails
             }
-            
         } catch (Exception e) {
-        	
             e.printStackTrace();
         }
     }
+
     
     
     private void editStudent(HttpServletRequest request, HttpServletResponse response)
+    
             throws ServletException, IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));

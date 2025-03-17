@@ -22,8 +22,6 @@ public class Verify implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		
-//		response.setContentType("text/html");
-		
 		HttpServletRequest req = (HttpServletRequest) request;
 		
 		HttpServletResponse res = (HttpServletResponse) response;
@@ -42,24 +40,7 @@ public class Verify implements Filter {
             return; 
         }
 		
-		
-		
-		
-//         PrintWriter p = response.getWriter();
-//		
-//		p.println("<h2> Processing...</h2>");
-//		
-//		System.out.println("this is filter process");
-		
 		chain.doFilter(request, response);
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 

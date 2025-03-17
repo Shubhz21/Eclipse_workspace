@@ -1,5 +1,6 @@
 <%@ page import="java.util.List, logreg.Adminandstudentmodel" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
 
 <html>
 <head>
@@ -7,6 +8,7 @@
     <style>
     
         body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; padding: 20px; }
+        
         .container { width: 80%; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px 0px gray; margin: auto; }
         
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -22,7 +24,9 @@
         .edit { background-color: green; }
         
         .delete { background-color: red; }
-        .logout{ background-color: grey;}
+        
+        .logout{ background-color: grey; }
+        
     </style>
 </head>
 <body>
@@ -35,21 +39,33 @@
                 </tr>
             </thead>
             <tbody>
+            
+            <%
+            
+    HttpSession sessionAdmin = request.getSession(false);
+            
+    if (sessionAdmin == null || sessionAdmin.getAttribute("username") == null || !"ADMIN".equals(sessionAdmin.getAttribute("role"))) {
+    	
+        response.sendRedirect("login.html?error=Please login first");
+        
+        return;
+    }
+%>
+            
                 <% List<Adminandstudentmodel> students = (List<Adminandstudentmodel>) request.getAttribute("students");
                    for (Adminandstudentmodel student : students) { %>
                 <tr>
-                    <td><%= student.getId() %></td>
-                    <td><%= student.getName() %></td>
-                    <td><%= student.getEmail() %></td>
-                    <td><%= student.getPhone() %></td>
-                    <td><%= student.getUsername() %></td>
+                    <td><%= student.getId()%></td>
+                    <td><%= student.getName()%></td>
+                    <td><%= student.getEmail()%></td>
+                    <td><%= student.getPhone()%></td>
+                    <td><%= student.getUsername()%></td>
                     <td>
                         <a href="EditStudentServlet?id=<%= student.getId() %>" class="btn edit">Edit</a> 	
                         <a href="DeleteStudentServlet?id=<%= student.getId() %>" class="btn delete" onclick="return confirm('Are you sure?');">Delete</a>
                     </td>
                 </tr>
                 <% } %>
-                
             </tbody>
         </table>
     </div>
