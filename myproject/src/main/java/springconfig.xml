@@ -14,8 +14,8 @@
 
 <bean id="sample" class="myproject.Address">
 
-<property name="state" value="maharashtra"/>
-<property name="city" value="pune"/>
+<property name="state" value="maharashtra" />
+<property name="city" value="pune" />
 <property name="pincode" value="411058" />
 
 </bean>
