@@ -3,11 +3,22 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <!-- Bean Definition -->
     
 
-<bean id="crdtcrd" class="myproject.Creditcard" />
-<bean id="dbtcrd" class="myproject.Debitcard" />
+<bean id="crdtcrd" class="myproject.Creditcard"/>
+<bean id="dbtcrd" class="myproject.Debitcard" scope="prototype" >
+
+<property name="add"  ref="sample "/>
+ 
+</bean>
+
+<bean id="sample" class="myproject.Address">
+
+<property name="state" value="maharashtra"/>
+<property name="city" value="pune"/>
+<property name="pincode" value="411058" />
+
+</bean>
+ 
 
 </beans>
