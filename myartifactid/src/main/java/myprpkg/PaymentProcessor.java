@@ -1,9 +1,29 @@
 package myprpkg;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class PaymentProcessor {
 	
 	private CardPayment creditCard;
 	private CardPayment debitCard;
+	
+	
+	public PaymentProcessor() {
+        System.out.println("PaymentProcessor default constructor called");
+    }
+	
+	@Autowired 
+	PaymentProcessor(@Qualifier("debitCardPayment") CardPayment crd){
+		
+		this.creditCard=crd;
+	}
+	
+
+	
+	
 	
 	
 	public void setCreditCard(CardPayment creditCard) {

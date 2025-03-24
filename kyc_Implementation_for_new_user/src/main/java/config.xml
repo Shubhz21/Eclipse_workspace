@@ -5,17 +5,12 @@
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     
-    <bean id="creditCard" class="myprpkg.CreditCardPayment"  />
-    
-     <bean id="debitCard" class="myprpkg.DebitCardPayment" primary="true"/>
+     <bean id="bnk" class="mynewpkg.Bank" />
 
     
-    <bean id="paymentProcessor" class="myprpkg.PaymentProcessor" autowire = "byType" >
+    <bean id="startPoint" class="mynewpkg.BankReg" autowire = "byType" >
     
-       <!--  <constructor-arg  ref="creditCard" />  -->
-        
-        
-        
+       
         
         
         
