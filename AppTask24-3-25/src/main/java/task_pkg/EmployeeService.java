@@ -1,14 +1,18 @@
 package task_pkg;
 
 
-
-
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+
+@Service
 public class EmployeeService {
+	
     private IEmployeeDAO employeeDAO;
 
     public EmployeeService(IEmployeeDAO employeeDAO) {
+    	
         this.employeeDAO = employeeDAO;
     }
 

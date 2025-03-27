@@ -1,10 +1,11 @@
 package task_pkg;
 
-public class Applicatioin {
+public class Application {
     public static void main(String[] args) {
+    	
         EmployeeService service = new EmployeeService(new EmployeeDAOImpl());
 
-        service.addEmployee(new Employee(0, "Viraj", "ML", 70000));
+        service.addEmployee(new Employee(0, "Rushi", "Manager", 100000));
         
         service.getAllEmployees();
         

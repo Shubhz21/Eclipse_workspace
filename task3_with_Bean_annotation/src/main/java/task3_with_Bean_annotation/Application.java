@@ -12,7 +12,7 @@ public class Application {
         ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
         
-        EmpS es = context.getBean(EmpS.class);
+        EmpS es = (EmpS)context.getBean(EmpS.class,"empS");
 
         
         es.getAllEmployees();
